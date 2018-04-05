@@ -1,0 +1,8 @@
+/home/michal/clion/clion-2017.2.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/michal/Desktop/mgr/gui
+
+==> Finding 3rd Party Packages
+-- Checking for module 'gtkmm-3.0'
+--   Found gtkmm-3.0, version 3.18.0
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/michal/Desktop/mgr/gui/cmake-build-debug
