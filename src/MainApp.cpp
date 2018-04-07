@@ -4,19 +4,20 @@
 
 #include "MainApp.h"
 
-MainApp::MainApp() {
+MainApp::MainApp(Controller *pController, Picture *pPicture) : controller_(pController), picture_(pPicture) {
 
     app_ = Gtk::Application::create();
 
     SRefBuilder::getRefBuilder();
 
-    mainWindow_ = new MainWindow();
+    mainWindow_ = new MainWindow(*controller_);
 
-    dialogFileOpen_ = new DialogFileOpen();
+    dialogFileOpen_ = new DialogFileOpen(*controller_);
 
-    picture_ = new Picture();
+    sigc::slot<bool> timerSlot = sigc::bind<Picture*> (sigc::mem_fun(mainWindow_, &MainWindow::update),picture_);
 
-    controller_ = new Controller(picture_,this);
+    sigc::connection timerConnection = Glib::signal_timeout().connect(timerSlot, TIME_INTERVAL);
+
 
 }
 
@@ -25,8 +26,6 @@ MainApp::~MainApp() {
     delete dialogFileOpen_;
 
     delete mainWindow_;
-
-    delete picture_;
 }
 
 void MainApp::runApplication() {

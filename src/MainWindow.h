@@ -8,21 +8,38 @@
 #include <gtkmm.h>
 #include <iostream>
 #include <opencv2/core/mat.hpp>
+#include "Controller.h"
 
-class MainWindow{
+class Controller;
+class Picture;
+
+class MainWindow
+{
     friend class MainApp;
-    friend void  runApplication();
+
 private:
-    const Glib::ustring mainWindowName_ ="appWindow";
+
+    const Glib::ustring mainWindowName_ = "appWindow";
+
     Gtk::Window *window_ ;
+
     Gtk::Button *exitButton_;
-    Gtk::DrawingArea *originalDrawing_;
+
+    explicit MainWindow (Controller &pController);
+
+    virtual ~MainWindow ();
+
 protected:
-    MainWindow();
-    virtual ~MainWindow();
-    void on_btnMainQuit_clicked();
+
+
 public:
-    static void refreshDrawingArea( char *widgetName, cv::Mat *src);
+
+    bool update(Picture *picture);
+
+    Glib::RefPtr<Gdk::Pixbuf> convertOpenCv2Gtk (cv::Mat *src, int dst_w, int dst_h);
+
+    void refreshDrawingArea (std::string widgetName, cv::Mat *src);
+
 };
 
 

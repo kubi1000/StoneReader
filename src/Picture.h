@@ -14,6 +14,9 @@
 #include "DialogFileOpen.h"
 
 /* As model it should not contains any objects from view or controller */
+
+
+
 class Picture {
 
 private:
@@ -21,7 +24,7 @@ private:
     // Attributes
     std::string filePath_;
 
-    cv::Mat picture_;
+    std::vector <cv::Mat> pictures_;
 
     // Methods
 
@@ -37,13 +40,9 @@ public:
 
     virtual ~Picture(){}
 
-    static void setPicture();
+    void setFilePath(std::string &&path);
 
-    void setFilePath(std::string path);
-
-    Glib::RefPtr<Gdk::Pixbuf> convertOpenCv2Gtk(cv::Mat *src,const int dst_w, const int dst_h);
-
-
+    const std::vector <cv::Mat> &getPictures () const {  return pictures_; }
 };
 
 

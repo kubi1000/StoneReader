@@ -5178,9 +5178,13 @@ CMakeFiles/gui.dir/src/MainWindow.cpp.o
  /usr/local/include/opencv2/viz/widgets.hpp
  /usr/local/lib/glib-2.0/include/glibconfig.h
 CMakeFiles/gui.dir/src/Picture.cpp.o
+ /home/michal/Desktop/mgr/gui/src/Controller.h
  /home/michal/Desktop/mgr/gui/src/DialogFileOpen.h
+ /home/michal/Desktop/mgr/gui/src/MainApp.h
+ /home/michal/Desktop/mgr/gui/src/MainWindow.h
  /home/michal/Desktop/mgr/gui/src/Picture.cpp
  /home/michal/Desktop/mgr/gui/src/Picture.h
+ /home/michal/Desktop/mgr/gui/src/SRefBuilder.h
  /usr/include/atk-1.0/atk/atk-enum-types.h
  /usr/include/atk-1.0/atk/atk.h
  /usr/include/atk-1.0/atk/atkaction.h

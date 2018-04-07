@@ -7,29 +7,26 @@
 
 #include <gtkmm.h>
 #include <iostream>
+#include "Controller.h"
 
+class Controller;
 
-class DialogFileOpen {
-
+class DialogFileOpen
+{
 
 private:
+
     Gtk::FileChooserDialog *chooser_ = nullptr;
 
     Gtk::Button *openButton_ = nullptr;
 
-protected:
-
 public:
 
-    DialogFileOpen();
+    explicit DialogFileOpen(Controller &pController);
 
-    virtual ~DialogFileOpen();
+    ~DialogFileOpen();
 
     Gtk::FileChooserDialog &getFileChooserDialog() { return *chooser_; }
-
-    friend class MainApp;
-
-    friend class Picture;
 };
 
 

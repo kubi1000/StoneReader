@@ -10,24 +10,27 @@
 #include "MainApp.h"
 
 
+class Picture;
+class MainApp;
 
-class Controller {
+class Controller : public sigc::trackable {
 
 private:
 
     Picture *picture_;
-    MainApp *mainApp_;
 
 public:
 
     // Methods
 
-    Controller(Picture *picture, MainApp *mainApp) :
-            picture_(picture), mainApp_(mainApp) {}
+    explicit Controller(Picture *picture) : picture_(picture) {}
 
-    ~Controller(){}
+    virtual ~Controller(){}
 
-    void on_btnMainDialogFileOpen_clicked();
+    virtual void on_btnMainDialogFileOpen_clicked(Gtk::FileChooserDialog *);
+
+    virtual void on_btnMainQuit_clicked(Gtk::Window *);
+
 
 };
 

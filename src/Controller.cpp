@@ -5,42 +5,42 @@
 #include "Controller.h"
 
 
-void Controller::on_btnMainDialogFileOpen_clicked() {
+void Controller::on_btnMainDialogFileOpen_clicked(Gtk::FileChooserDialog *chooser) {
 
-    auto &chooser = mainApp_->getDialogFileOpen().getFileChooserDialog();
+    int response = chooser->run();
 
-    int response = chooser.run();
+    switch(response) {
 
-    switch(response){
-
-        case(1):
-        {
+        case (1): {
             std::cout << "Select clicked." << std::endl;
 
-            std::cout << "File selected: " << chooser.get_filename()
+            std::cout << "File selected: " << chooser->get_filename()
                       << std::endl;
 
-            picture_->setFilePath(chooser.get_filename());
+            picture_->setFilePath(std::move(chooser->get_filename()));
 
-            chooser.close();
+            chooser->close();
 
             break;
         }
-        case(0):
-        {
+        case (0): {
             std::cout << "Cancel clicked." << std::endl;
 
-            chooser.close();
+            chooser->close();
 
             break;
         }
-        default:
-        {
-            std::cout<<"Unexpected button clicked."<<std::endl;
+        default: {
+            std::cout << "Unexpected button clicked." << std::endl;
 
-            chooser.close();
+            chooser->close();
 
             break;
         }
     }
+}
+
+void Controller::on_btnMainQuit_clicked(Gtk::Window *window)
+{
+        window->close();
 }

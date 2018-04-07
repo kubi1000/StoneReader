@@ -15,13 +15,15 @@
 #include "Picture.h"
 #include "Controller.h"
 
-/* As view it should contains all render methods
- * connections to signals, but without implementation of methods.
- * It should contains also connection to controller and model*/
+#define TIME_INTERVAL 3000
 
+class MainWindow;
+class DialogFileOpen;
+class Picture;
+class Controller;
 
-class MainApp {
-
+class MainApp
+{
 protected:
 
 private:
@@ -44,20 +46,17 @@ public:
 
     // Attributes
 
-
-
     // Methods
 
-    MainApp();
+    MainApp(Controller *pController, Picture *pPicture);
 
-    virtual ~MainApp();
+    ~MainApp();
 
     void runApplication();
 
     DialogFileOpen &getDialogFileOpen() { return *dialogFileOpen_; }
+
 };
-
-
 
 
 #endif //GUI_MAINAPP_H

@@ -5177,9 +5177,13 @@ CMakeFiles/gui.dir/src/MainWindow.cpp.o: /usr/local/include/opencv2/viz/vizcore.
 CMakeFiles/gui.dir/src/MainWindow.cpp.o: /usr/local/include/opencv2/viz/widgets.hpp
 CMakeFiles/gui.dir/src/MainWindow.cpp.o: /usr/local/lib/glib-2.0/include/glibconfig.h
 
+CMakeFiles/gui.dir/src/Picture.cpp.o: ../src/Controller.h
 CMakeFiles/gui.dir/src/Picture.cpp.o: ../src/DialogFileOpen.h
+CMakeFiles/gui.dir/src/Picture.cpp.o: ../src/MainApp.h
+CMakeFiles/gui.dir/src/Picture.cpp.o: ../src/MainWindow.h
 CMakeFiles/gui.dir/src/Picture.cpp.o: ../src/Picture.cpp
 CMakeFiles/gui.dir/src/Picture.cpp.o: ../src/Picture.h
+CMakeFiles/gui.dir/src/Picture.cpp.o: ../src/SRefBuilder.h
 CMakeFiles/gui.dir/src/Picture.cpp.o: /usr/include/atk-1.0/atk/atk-enum-types.h
 CMakeFiles/gui.dir/src/Picture.cpp.o: /usr/include/atk-1.0/atk/atk.h
 CMakeFiles/gui.dir/src/Picture.cpp.o: /usr/include/atk-1.0/atk/atkaction.h

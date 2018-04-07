@@ -6,7 +6,7 @@
 #include "DialogFileOpen.h"
 #include "MainApp.h"
 
-DialogFileOpen::DialogFileOpen()
+DialogFileOpen::DialogFileOpen(Controller &pController)
 {
     SRefBuilder::getRefBuilder()->get_widget("fileChooserOpen",chooser_);
 
@@ -14,10 +14,12 @@ DialogFileOpen::DialogFileOpen()
 
     if(openButton_)
     {
-        openButton_->signal_clicked().connect(sigc::mem_fun(*this, &Controller::on_btnMainDialogFileOpen_clicked));
+       openButton_->signal_clicked().connect
+               (sigc::bind<Gtk::FileChooserDialog*>
+                   (sigc::mem_fun(pController, &Controller::on_btnMainDialogFileOpen_clicked),
+                       chooser_));
     }
 }
-
 
 DialogFileOpen::~DialogFileOpen()
 {

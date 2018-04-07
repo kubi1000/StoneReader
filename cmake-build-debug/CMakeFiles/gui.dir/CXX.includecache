@@ -31,6 +31,8 @@ gtkmm.h
 -
 iostream
 -
+Controller.h
+/home/michal/Desktop/mgr/gui/src/Controller.h
 
 /home/michal/Desktop/mgr/gui/src/MainApp.cpp
 MainApp.h
@@ -65,6 +67,8 @@ iostream
 -
 opencv2/core/mat.hpp
 -
+Controller.h
+/home/michal/Desktop/mgr/gui/src/Controller.h
 
 /home/michal/Desktop/mgr/gui/src/Picture.cpp
 Picture.h
