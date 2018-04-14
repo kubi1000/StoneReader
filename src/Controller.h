@@ -9,9 +9,7 @@
 #include "Picture.h"
 #include "MainApp.h"
 
-
-class Picture;
-class MainApp;
+struct processParameters;
 
 class Controller : public sigc::trackable {
 
@@ -31,7 +29,7 @@ public:
 
     virtual void on_btnMainQuit_clicked(Gtk::Window *);
 
-
+    virtual void startProcessing(const processParameters &);
 };
 
 

@@ -9,18 +9,19 @@
 
 #include <gtkmm.h>
 #include <iostream>
-#include "SRefBuilder.h"
-#include "DialogFileOpen.h"
 #include "MainWindow.h"
 #include "Picture.h"
 #include "Controller.h"
+#include "SRefBuilder.h"
+#include "DialogFileOpen.h"
 
-#define TIME_INTERVAL 3000
+
+#define TIME_INTERVAL 800
 
 class MainWindow;
 class DialogFileOpen;
-class Picture;
 class Controller;
+class Picture;
 
 class MainApp
 {

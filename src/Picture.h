@@ -11,24 +11,22 @@
 #include <vector>
 #include <iostream>
 
-#include "DialogFileOpen.h"
+#include "MainWindow.h"
 
 /* As model it should not contains any objects from view or controller */
-
-
+struct processParameters;
 
 class Picture {
 
 private:
 
     // Attributes
+
     std::string filePath_;
 
     std::vector <cv::Mat> pictures_;
 
     // Methods
-
-    void loadFile();
 
 public:
 
@@ -36,13 +34,21 @@ public:
 
     //Methods
 
-    Picture(){}
+    Picture() = default;
 
-    virtual ~Picture(){}
+    virtual ~Picture() = default;
 
     void setFilePath(std::string &&path);
 
     const std::vector <cv::Mat> &getPictures () const {  return pictures_; }
+
+    void automaticBrightContrast();
+
+    void convert2Binary(const processParameters &);
+
+    void clearVector();
+
+
 };
 
 

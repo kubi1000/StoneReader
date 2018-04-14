@@ -43,16 +43,16 @@ gtkmm.h
 -
 iostream
 -
-SRefBuilder.h
-/home/michal/Desktop/mgr/gui/src/SRefBuilder.h
-DialogFileOpen.h
-/home/michal/Desktop/mgr/gui/src/DialogFileOpen.h
 MainWindow.h
 /home/michal/Desktop/mgr/gui/src/MainWindow.h
 Picture.h
 /home/michal/Desktop/mgr/gui/src/Picture.h
 Controller.h
 /home/michal/Desktop/mgr/gui/src/Controller.h
+SRefBuilder.h
+/home/michal/Desktop/mgr/gui/src/SRefBuilder.h
+DialogFileOpen.h
+/home/michal/Desktop/mgr/gui/src/DialogFileOpen.h
 
 /home/michal/Desktop/mgr/gui/src/MainWindow.cpp
 MainWindow.h
@@ -85,8 +85,8 @@ vector
 -
 iostream
 -
-DialogFileOpen.h
-/home/michal/Desktop/mgr/gui/src/DialogFileOpen.h
+MainWindow.h
+/home/michal/Desktop/mgr/gui/src/MainWindow.h
 
 /home/michal/Desktop/mgr/gui/src/SRefBuilder.h
 gtkmm/builder.h

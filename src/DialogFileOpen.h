@@ -18,7 +18,7 @@ private:
 
     Gtk::FileChooserDialog *chooser_ = nullptr;
 
-    Gtk::Button *openButton_ = nullptr;
+    Gtk::ToolButton *openButton_ = nullptr;
 
 public:
 

@@ -7,6 +7,8 @@
 
 void Controller::on_btnMainDialogFileOpen_clicked(Gtk::FileChooserDialog *chooser) {
 
+    picture_->clearVector();
+
     int response = chooser->run();
 
     switch(response) {
@@ -43,4 +45,12 @@ void Controller::on_btnMainDialogFileOpen_clicked(Gtk::FileChooserDialog *choose
 void Controller::on_btnMainQuit_clicked(Gtk::Window *window)
 {
         window->close();
+}
+
+void Controller::startProcessing(const processParameters & parameters) {
+
+    picture_->automaticBrightContrast();
+
+    picture_->convert2Binary(parameters);
+
 }
