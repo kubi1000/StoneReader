@@ -14,6 +14,8 @@
 #include "Controller.h"
 #include "SRefBuilder.h"
 #include "DialogFileOpen.h"
+#include "HistogramDialogWindow.h"
+#include "HistogramWindow.h"
 
 
 #define TIME_INTERVAL 800
@@ -22,32 +24,26 @@ class MainWindow;
 class DialogFileOpen;
 class Controller;
 class Picture;
+class HistogramDialogWindow;
+class HistogramWindow;
 
 class MainApp
 {
-protected:
-
-private:
-
-    // Attributes
-
     Picture *picture_;
+
+    Controller *controller_;
 
     Glib::RefPtr<Gtk::Application> app_;
 
     DialogFileOpen *dialogFileOpen_;
 
+    HistogramDialogWindow *histogramDialogWindow_;
+
     MainWindow *mainWindow_;
 
-    Controller *controller_;
-
-    // Methods
+    HistogramWindow *histogramWindow_;
 
 public:
-
-    // Attributes
-
-    // Methods
 
     MainApp(Controller *pController, Picture *pPicture);
 

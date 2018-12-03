@@ -24,7 +24,5 @@ DialogFileOpen::DialogFileOpen(Controller &pController)
 DialogFileOpen::~DialogFileOpen()
 {
     delete chooser_;
-
-    delete openButton_;
 }
 

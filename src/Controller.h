@@ -9,7 +9,10 @@
 #include "Picture.h"
 #include "MainApp.h"
 
-struct processParameters;
+struct ProcessParameters;
+class HistogramDialogWindow;
+class MainWindow;
+class HistogramWindow;
 
 class Controller : public sigc::trackable {
 
@@ -17,9 +20,17 @@ private:
 
     Picture *picture_;
 
+    HistogramDialogWindow *histogramDialog_ = nullptr;
+
+    MainWindow *mainWindow_ = nullptr;
+
+    HistogramWindow *histogramWindow_ = nullptr;
+
+    int numberOfContours_;
+
 public:
 
-    // Methods
+    static bool draw_;
 
     explicit Controller(Picture *picture) : picture_(picture) {}
 
@@ -29,7 +40,29 @@ public:
 
     virtual void on_btnMainQuit_clicked(Gtk::Window *);
 
-    virtual void startProcessing(const processParameters &);
+    virtual void startProcessing(const ProcessParameters &);
+
+    void refactorScale(gdouble &);
+
+    void generateHistogram();
+
+    void on_entryScale_changed(Gtk::Entry *);
+
+    void on_entryNumberOfBeans_changed(Gtk::Entry *);
+
+    void on_btnScale_clicked();
+
+    void on_checkPrintHistogram_toggled();
+
+    void getGuiContact(HistogramDialogWindow &pHist, MainWindow &pMain, HistogramWindow &pHistWind)
+    {
+        histogramDialog_ = &pHist;
+
+        mainWindow_ = &pMain;
+
+        histogramWindow_ = &pHistWind;
+    }
+
 };
 
 
