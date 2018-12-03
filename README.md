@@ -1,1 +1,1 @@
-# StoneReader
+# Grains detector
